@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<!--
+  Copyright 2010 Google Inc.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+  Original slides: Marcin Wichary (mwichary@google.com)
+  Modifications: Ernest Delgado (ernestd@google.com)
+                 Alex Russell (slightlyoff@chromium.org)
+
+  landslide modifications: Adam Zapletal (adamzap@gmail.com)
+                           Nicolas Perriault (nperriault@gmail.com)
+-->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Una mojadita en javascript</title>
+    <!-- Styles -->
+    
+    <link rel="stylesheet" media="print" href="file:///home/joac/machinalis/talks/landslide-theme/machinalis/css/print.css">
+    <link rel="stylesheet" media="screen, projection" href="file:///home/joac/machinalis/talks/landslide-theme/machinalis/css/screen.css">
+    
+    <!-- /Styles -->
+    <!-- Javascripts -->
+    
+    <script type="text/javascript" src="file:///home/joac/machinalis/talks/landslide-theme/machinalis/js/slides.js"></script>
+    
+    <!-- /Javascripts -->
+</head>
+<body>
+  <div class="presentation">
+    <div class="slides">
+      
+      <!-- slide source: real_javascript_development.markdown -->
+      <div class="slide">
+        <div class="inner">
+          
+          <header><h1>Una mojadita en javascript</h1></header>
+          
+          
+          <section><h2>Joaquín "joac.js" Sorianello</h2>
+<h2>Cordoba - 2013</h2></section>
+          
+        </div>
+        <footer>
+          
+          <aside class="source">
+            Source: <a href="file:///home/joac/machinalis/talks/real_javascript_development.markdown">real_javascript_development.markdown</a>
+          </aside>
+          
+          <aside class="page_number">
+            © <a href="http://www.machinalis.com">Machinalis</a> 1/26
+          </aside>
+        </footer>
+      </div>
+      
+      <!-- slide source: real_javascript_development.markdown -->
+      <div class="slide">
+        <div class="inner">
+          
+          <header><h1>Por que esta charla</h1></header>
+          
+          
+          <section><ul>
+<li>Javascript™ es un lenguaje bonito e incomprendido</li>
+<li>Con la llegada de HTML5 y los browsers modernos hacen falta mas developers</li>
+<li>Javascript™ está en todas partes</li>
+<li>Tiene mis iniciales y eso lo hace el mejor lenguaje del mundo</li>
+</ul></section>
+          
+        </div>
+        <footer>
+          
+          <aside class="source">
+            Source: <a href="file:///home/joac/machinalis/talks/real_javascript_development.markdown">real_javascript_development.markdown</a>
+          </aside>
+          
+          <aside class="page_number">
+            © <a href="http://www.machinalis.com">Machinalis</a> 2/26
+          </aside>
+        </footer>
+      </div>
+      
+      <!-- slide source: real_javascript_development.markdown -->
+      <div class="slide">
+        <div class="inner">
+          
+          <header><h1>Antes de poner la carne al fuego</h1></header>
+          
+          
+          <section><ul>
+<li>Si hay typos... esta charla es como javascript</li>
+<li>Si no entiende, pregunte. </li>
+<li>Si hablo muy rapido, avise.</li>
+<li>Si me equivoco, corrijame, lo hago a propósito para ver si estan atentos.</li>
+</ul></section>
+          
+        </div>
+        <footer>
+          
+          <aside class="source">
+            Source: <a href="file:///home/joac/machinalis/talks/real_javascript_development.markdown">real_javascript_development.markdown</a>
+          </aside>
+          
+          <aside class="page_number">
+            © <a href="http://www.machinalis.com">Machinalis</a> 3/26
+          </aside>
+        </footer>
+      </div>
+      
+      <!-- slide source: real_javascript_development.markdown -->
+      <div class="slide">
+        <div class="inner">
+          
+          <header><h1>Un poquito de historia</h1></header>
+          
+          
+          <section><ul>
+<li>Creado en Netscape™ por Brendan Eich</li>
+<li>Lanzado al mercado en septiembre de 1995 (Ya cumplio 18!)</li>
+<li>Originalmente llamado LiveScript</li>
+<li>Estandarizado en junio del 97 como <strong>ECMAScript</strong></li>
+<li>La llegada de ajax y la web dinámica, le dio un gran impulso</li>
+</ul></section>
+          
+        </div>
+        <footer>
+          
+          <aside class="source">
+            Source: <a href="file:///home/joac/machinalis/talks/real_javascript_development.markdown">real_javascript_development.markdown</a>
+          </aside>
+          
+          <aside class="page_number">
+            © <a href="http://www.machinalis.com">Machinalis</a> 4/26
+          </aside>
+        </footer>
+      </div>
+      
+      <!-- slide source: real_javascript_development.markdown -->
+      <div class="slide">
+        <div class="inner">
+          
+          <header><h1>Features</h1></header>
+          
+          
+          <section><ul>
+<li>Tipado Dinamico</li>
+<li>Basado en objetos</li>
+<li>Utiliza <strong>prototipos</strong> </li>
+<li>Las funciones son <strong>first class citizens</strong></li>
+</ul></section>
+          
+        </div>
+        <footer>
+          
+          <aside class="source">
+            Source: <a href="file:///home/joac/machinalis/talks/real_javascript_development.markdown">real_javascript_development.markdown</a>
+          </aside>
+          
+          <aside class="page_number">
+            © <a href="http://www.machinalis.com">Machinalis</a> 5/26
+          </aside>
+        </footer>
+      </div>
+      
+      <!-- slide source: real_javascript_development.markdown -->
+      <div class="slide">
+        <div class="inner">
+          
+          <header><h1>Comparando con python</h1></header>
+          
+          
+          <section><ul>
+<li>No tiene clases "as is"</li>
+<li>Hay muchos interpretes y los requerimientos del Mundo Real™ nos obligan a 
+escribir codigo que funcione correctamente, a pesar de las diferencias entre ellos.</li>
+<li>Muchos <em>no programadores</em> escriben Javascript</li>
+</ul></section>
+          
+        </div>
+        <footer>
+          
+          <aside class="source">
+            Source: <a href="file:///home/joac/machinalis/talks/real_javascript_development.markdown">real_javascript_development.markdown</a>
+          </aside>
+          
+          <aside class="page_number">
+            © <a href="http://www.machinalis.com">Machinalis</a> 6/26
+          </aside>
+        </footer>
+      </div>
+      
+      <!-- slide source: real_javascript_development.markdown -->
+      <div class="slide">
+        <div class="inner">
+          
+          <header><h1>Donde hay javascript</h1></header>
+          
+          
+          <section><ul>
+<li>Browsers, casi todos (lynx?)</li>
+<li>Unity 3d</li>
+<li>Map-Reduce de MongoDB</li>
+<li>Suite Adobe</li>
+<li>El nuevo telefono de Mozilla</li>
+</ul></section>
+          
+        </div>
+        <footer>
+          
+          <aside class="source">
+            Source: <a href="file:///home/joac/machinalis/talks/real_javascript_development.markdown">real_javascript_development.markdown</a>
+          </aside>
+          
+          <aside class="page_number">
+            © <a href="http://www.machinalis.com">Machinalis</a> 7/26
+          </aside>
+        </footer>
+      </div>
+      
+      <!-- slide source: real_javascript_development.markdown -->
+      <div class="slide">
+        <div class="inner">
+          
+          <header><h1>Y porque es tan "poronga"?</h1></header>
+          
+          
+          <section><ul>
+<li>El lenguaje en si tiene falencias, que tienen que ver con su fugaz desarrollo 
+y lanzamiento.</li>
+<li>Se desarrollan muchas aplicaciones javascript sin conocer el lenguaje</li>
+<li>La sintaxis es similar a otros lenguajes, pero no se comporta de la misma 
+manera.</li>
+<li>Como está apareado a un runtime, muchas personas consideran las falencias en el manejo del DOM, como falencias de Javascript</li>
+<li>Los bloques no definen scopes</li>
+</ul></section>
+          
+        </div>
+        <footer>
+          
+          <aside class="source">
+            Source: <a href="file:///home/joac/machinalis/talks/real_javascript_development.markdown">real_javascript_development.markdown</a>
+          </aside>
+          
+          <aside class="page_number">
+            © <a href="http://www.machinalis.com">Machinalis</a> 8/26
+          </aside>
+        </footer>
+      </div>
+      
+      <!-- slide source: real_javascript_development.markdown -->
+      <div class="slide has_code">
+        <div class="inner">
+          
+          <header><h1>Todo es global</h1></header>
+          
+          
+          <section><div class="highlight"><pre><span class="lineno">1</span> <span class="nx">mi_numero</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+<span class="lineno">2</span> <span class="kd">function</span> <span class="nx">mi_funcion_mala</span><span class="p">()</span> <span class="p">{</span>
+<span class="lineno">3</span>     <span class="nx">mi_numero</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="lineno">4</span> <span class="p">};</span>
+<span class="lineno">5</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mi_numero</span><span class="p">)</span>
+<span class="lineno">6</span> <span class="c1">// -&gt; 8</span>
+<span class="lineno">7</span> <span class="nx">mi_funcion_mala</span><span class="p">()</span>
+<span class="lineno">8</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mi_numero</span><span class="p">)</span>
+<span class="lineno">9</span> <span class="c1">// -&gt; 5</span>
+</pre></div>
+</section>
+          
+        </div>
+        <footer>
+          
+          <aside class="source">
+            Source: <a href="file:///home/joac/machinalis/talks/real_javascript_development.markdown">real_javascript_development.markdown</a>
+          </aside>
+          
+          <aside class="page_number">
+            © <a href="http://www.machinalis.com">Machinalis</a> 9/26
+          </aside>
+        </footer>
+      </div>
+      
+      <!-- slide source: real_javascript_development.markdown -->
+      <div class="slide">
+        <div class="inner">
+          
+          <header><h1>Namespace compartido</h1></header>
+          
+          
+          <section><ul>
+<li>Todos los tags <code>script</code> comparten el mismo Namespace</li>
+<li>Tenemos que ser cuidadosos a la hora de incluir librerias de terceros</li>
+<li>Tenemos que ser cuidadosos con la "huella" que deja nuestro código en el
+   namespace global</li>
+</ul></section>
+          
+        </div>
+        <footer>
+          
+          <aside class="source">
+            Source: <a href="file:///home/joac/machinalis/talks/real_javascript_development.markdown">real_javascript_development.markdown</a>
+          </aside>
+          
+          <aside class="page_number">
+            © <a href="http://www.machinalis.com">Machinalis</a> 10/26
+          </aside>
+        </footer>
+      </div>
+      
+      <!-- slide source: real_javascript_development.markdown -->
+      <div class="slide has_code">
+        <div class="inner">
+          
+          <header><h1>Operador "+" concatena y suma</h1></header>
+          
+          
+          <section><div class="highlight"><pre><span class="lineno"> 1</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+<span class="lineno"> 2</span> <span class="c1">// -&gt; 3</span>
+<span class="lineno"> 3</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="s1">&#39;3&#39;</span><span class="p">)</span>
+<span class="lineno"> 4</span> <span class="c1">// -&gt; 33</span>
+<span class="lineno"> 5</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;1&#39;</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span>
+<span class="lineno"> 6</span> <span class="c1">// -&gt; 123</span>
+<span class="lineno"> 7</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;1&#39;</span> <span class="o">+</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="lineno"> 8</span> <span class="c1">// -&gt; 12,3</span>
+<span class="lineno"> 9</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;1&#39;</span> <span class="o">+</span> <span class="p">{</span><span class="nx">foo</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">bar</span><span class="o">:</span> <span class="mi">3</span><span class="p">})</span>
+<span class="lineno">10</span> <span class="c1">// -&gt; 1[object Object]</span>
+<span class="lineno">11</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="p">{</span><span class="nx">foo</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">bar</span><span class="o">:</span> <span class="mi">3</span><span class="p">})</span>
+<span class="lineno">12</span> <span class="c1">// -&gt; 1[object Object]</span>
+<span class="lineno">13</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">+</span><span class="p">{</span><span class="nx">foo</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">bar</span><span class="o">:</span> <span class="mi">3</span><span class="p">}</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="s1">&#39;Hola!&#39;</span> <span class="o">+</span> <span class="p">(</span><span class="o">-</span><span class="s1">&#39;00001&#39;</span><span class="p">))</span>
+<span class="lineno">14</span> <span class="c1">// NaNHola!-1</span>
+</pre></div>
+
+<p>Hay que tener cuidado!</p></section>
+          
+        </div>
+        <footer>
+          
+          <aside class="source">
+            Source: <a href="file:///home/joac/machinalis/talks/real_javascript_development.markdown">real_javascript_development.markdown</a>
+          </aside>
+          
+          <aside class="page_number">
+            © <a href="http://www.machinalis.com">Machinalis</a> 11/26
+          </aside>
+        </footer>
+      </div>
+      
+      <!-- slide source: real_javascript_development.markdown -->
+      <div class="slide">
+        <div class="inner">
+          
+          <header><h1>Los ';' se completan magicamente.</h1></header>
+          
+          
+          <section><ul>
+<li>Y las reglas de esa magia <a href="http://es5.github.io/#x7.9">no son tan obvias</a></li>
+<li>Nuestro código se rompe si lo minificamos sin tener cuidado  </li>
+</ul></section>
+          
+        </div>
+        <footer>
+          
+          <aside class="source">
+            Source: <a href="file:///home/joac/machinalis/talks/real_javascript_development.markdown">real_javascript_development.markdown</a>
+          </aside>
+          
+          <aside class="page_number">
+            © <a href="http://www.machinalis.com">Machinalis</a> 12/26
+          </aside>
+        </footer>
+      </div>
+      
+      <!-- slide source: real_javascript_development.markdown -->
+      <div class="slide has_code">
+        <div class="inner">
+          
+          <header><h1>Un poco de objetos</h1></header>
+          
+          
+          <section><p>La forma mas <strong>naive</strong> de crear un objeto:</p>
+<div class="highlight"><pre><span class="lineno"> 1</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">{</span> 
+<span class="lineno"> 2</span>   <span class="nx">x</span><span class="o">:</span> <span class="mi">20</span><span class="p">,</span> 
+<span class="lineno"> 3</span>   <span class="nx">y</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span>
+<span class="lineno"> 4</span>   <span class="nx">toString</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="lineno"> 5</span>       <span class="k">return</span> <span class="s2">&quot;&lt;Punto(x=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o">+</span> <span class="s2">&quot; y=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">y</span> <span class="o">+</span> <span class="s2">&quot;)&gt;&quot;</span><span class="p">;</span>                        
+<span class="lineno"> 6</span>   <span class="p">},</span>  
+<span class="lineno"> 7</span> <span class="p">};</span>
+<span class="lineno"> 8</span> 
+<span class="lineno"> 9</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+<span class="lineno">10</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;El objeto es: &quot;</span> <span class="o">+</span> <span class="nx">a</span><span class="p">);</span>
+<span class="lineno">11</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">+</span><span class="nx">a</span><span class="p">);</span>
+</pre></div>
+
+<p>No es la unica</p></section>
+          
+        </div>
+        <footer>
+          
+          <aside class="source">
+            Source: <a href="file:///home/joac/machinalis/talks/real_javascript_development.markdown">real_javascript_development.markdown</a>
+          </aside>
+          
+          <aside class="page_number">
+            © <a href="http://www.machinalis.com">Machinalis</a> 13/26
+          </aside>
+        </footer>
+      </div>
+      
+      <!-- slide source: real_javascript_development.markdown -->
+      <div class="slide has_code">
+        <div class="inner">
+          
+          <header><h1>Parece un JSON</h1></header>
+          
+          
+          <section><div class="highlight"><pre><span class="lineno">1</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="o">:</span><span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="o">:</span><span class="mi">30</span><span class="p">};</span>  <span class="c1">// JSON y javascript valido</span>
+<span class="lineno">2</span> <span class="nx">bar</span> <span class="o">=</span> <span class="p">{</span><span class="nx">x</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mi">30</span> <span class="p">};</span>    <span class="c1">// Objecto javascript</span>
+</pre></div>
+
+<p>Son similares, pero no son lo mismo</p></section>
+          
+        </div>
+        <footer>
+          
+          <aside class="source">
+            Source: <a href="file:///home/joac/machinalis/talks/real_javascript_development.markdown">real_javascript_development.markdown</a>
+          </aside>
+          
+          <aside class="page_number">
+            © <a href="http://www.machinalis.com">Machinalis</a> 14/26
+          </aside>
+        </footer>
+      </div>
+      
+      <!-- slide source: real_javascript_development.markdown -->
+      <div class="slide has_code">
+        <div class="inner">
+          
+          <header><h1>Y las clases?</h1></header>
+          
+          
+          <section><p>Javascript no tiene clases <strong>"as is"</strong>, pero nos permite crear funciones constructoras:     </p>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="kd">function</span> <span class="nx">Punto</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">2</span>     <span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">x</span><span class="p">;</span> 
+<span class="lineno">3</span>     <span class="k">this</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="nx">y</span><span class="p">;</span> 
+<span class="lineno">4</span>     <span class="k">this</span><span class="p">.</span><span class="nx">toString</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="lineno">5</span>         <span class="k">return</span> <span class="s2">&quot;&lt;Punto(x=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o">+</span> <span class="s2">&quot;, y=&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">y</span> <span class="o">+</span> <span class="s2">&quot;)&gt;&quot;</span><span class="p">;</span>                              <span class="p">};</span>  
+<span class="lineno">6</span> <span class="p">};</span>
+</pre></div>
+
+<p>Notar que <code>this</code> es implicito!</p></section>
+          
+        </div>
+        <footer>
+          
+          <aside class="source">
+            Source: <a href="file:///home/joac/machinalis/talks/real_javascript_development.markdown">real_javascript_development.markdown</a>
+          </aside>
+          
+          <aside class="page_number">
+            © <a href="http://www.machinalis.com">Machinalis</a> 15/26
+          </aside>
+        </footer>
+      </div>
+      
+      <!-- slide source: real_javascript_development.markdown -->
+      <div class="slide">
+        <div class="inner">
+          
+          <header><h1>How is 'this'? Pt.1</h1></header>
+          
+          
+          <section><p>Probemos!</p></section>
+          
+        </div>
+        <footer>
+          
+          <aside class="source">
+            Source: <a href="file:///home/joac/machinalis/talks/real_javascript_development.markdown">real_javascript_development.markdown</a>
+          </aside>
+          
+          <aside class="page_number">
+            © <a href="http://www.machinalis.com">Machinalis</a> 16/26
+          </aside>
+        </footer>
+      </div>
+      
+      <!-- slide source: real_javascript_development.markdown -->
+      <div class="slide">
+        <div class="inner">
+          
+          <header><h1>How is 'this'? Pt.2</h1></header>
+          
+          
+          <section><ul>
+<li>
+<p>Si usamos <code>new</code>, se construye un nuevo objeto vacio y <code>this</code> corresponde a ese
+nuevo objeto.</p>
+</li>
+<li>
+<p>Si llamamos a la funcion <em>a secas</em>, <code>this</code> corresponde al objeto global :P</p>
+</li>
+<li>
+<p>Si <strong>"attachamos"</strong> la funcion a un objeto, <code>this</code> corresponde a ese objeto</p>
+</li>
+</ul></section>
+          
+        </div>
+        <footer>
+          
+          <aside class="source">
+            Source: <a href="file:///home/joac/machinalis/talks/real_javascript_development.markdown">real_javascript_development.markdown</a>
+          </aside>
+          
+          <aside class="page_number">
+            © <a href="http://www.machinalis.com">Machinalis</a> 17/26
+          </aside>
+        </footer>
+      </div>
+      
+      <!-- slide source: real_javascript_development.markdown -->
+      <div class="slide has_code">
+        <div class="inner">
+          
+          <header><h1>Dealing with 'this'</h1></header>
+          
+          
+          <section><h2>apply</h2>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="nx">fun</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">thisArg</span><span class="p">[,</span> <span class="nx">argsArray</span><span class="p">])</span>
+</pre></div>
+
+<h2>call</h2>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="nx">fun</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">thisArg</span><span class="p">[,</span> <span class="nx">arg1</span><span class="p">[,</span> <span class="nx">arg2</span><span class="p">[,</span> <span class="p">...]]])</span>
+</pre></div>
+</section>
+          
+        </div>
+        <footer>
+          
+          <aside class="source">
+            Source: <a href="file:///home/joac/machinalis/talks/real_javascript_development.markdown">real_javascript_development.markdown</a>
+          </aside>
+          
+          <aside class="page_number">
+            © <a href="http://www.machinalis.com">Machinalis</a> 18/26
+          </aside>
+        </footer>
+      </div>
+      
+      <!-- slide source: real_javascript_development.markdown -->
+      <div class="slide">
+        <div class="inner">
+          
+          <header><h1>Prototype this!</h1></header>
+          
+          
+        </div>
+        <footer>
+          
+          <aside class="source">
+            Source: <a href="file:///home/joac/machinalis/talks/real_javascript_development.markdown">real_javascript_development.markdown</a>
+          </aside>
+          
+          <aside class="page_number">
+            © <a href="http://www.machinalis.com">Machinalis</a> 19/26
+          </aside>
+        </footer>
+      </div>
+      
+      <!-- slide source: real_javascript_development.markdown -->
+      <div class="slide">
+        <div class="inner">
+          
+          <header><h1>Prototype override</h1></header>
+          
+          
+        </div>
+        <footer>
+          
+          <aside class="source">
+            Source: <a href="file:///home/joac/machinalis/talks/real_javascript_development.markdown">real_javascript_development.markdown</a>
+          </aside>
+          
+          <aside class="page_number">
+            © <a href="http://www.machinalis.com">Machinalis</a> 20/26
+          </aside>
+        </footer>
+      </div>
+      
+      <!-- slide source: real_javascript_development.markdown -->
+      <div class="slide has_code">
+        <div class="inner">
+          
+          <header><h1>Buenas practicas 1</h1></header>
+          
+          
+          <section><h2>Ser expicitos con los scopes, y usar <code>window</code></h2>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="nb">window</span><span class="p">.</span><span class="nx">mi_global</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span>
+</pre></div>
+
+<h2>Definir las variables al inicio de las funciones</h2>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="kd">function</span> <span class="nx">mi_funcion</span><span class="p">()</span> <span class="p">{</span>
+<span class="lineno">2</span>     <span class="kd">var</span> <span class="nx">variable</span> <span class="o">=</span> <span class="mi">75</span><span class="p">,</span> <span class="nx">variable_2</span> <span class="o">=</span> <span class="p">{</span><span class="nx">foo</span><span class="o">:</span> <span class="mi">16</span><span class="p">};</span>
+<span class="lineno">3</span> <span class="p">};</span>
+</pre></div>
+
+<h2>Usar variables que empiecen con $ para denotar selectores</h2>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="nx">$div_loco</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#div_loco&#39;</span><span class="p">);</span>
+</pre></div>
+</section>
+          
+        </div>
+        <footer>
+          
+          <aside class="source">
+            Source: <a href="file:///home/joac/machinalis/talks/real_javascript_development.markdown">real_javascript_development.markdown</a>
+          </aside>
+          
+          <aside class="page_number">
+            © <a href="http://www.machinalis.com">Machinalis</a> 21/26
+          </aside>
+        </footer>
+      </div>
+      
+      <!-- slide source: real_javascript_development.markdown -->
+      <div class="slide has_code">
+        <div class="inner">
+          
+          <header><h1>Buenas practicas 2</h1></header>
+          
+          
+          <section><h2>Si usamos jquery, <strong>cachear</strong> los selectores:</h2>
+<h3>Mal:</h3>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="nx">_</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">lista_de_items</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">2</span>     <span class="nx">elemento</span> <span class="o">=</span> <span class="nx">construir_li</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
+<span class="lineno">3</span>     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.foo .bar &gt; ul&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="nx">elemento</span><span class="p">);</span>
+<span class="lineno">4</span> <span class="p">});</span>
+</pre></div>
+
+<h3>Bien:</h3>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="nx">$mi_selector</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.foo .bar &gt; ul&#39;</span><span class="p">);</span>
+<span class="lineno">2</span> <span class="nx">_</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">lista_de_items</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">3</span>     <span class="nx">elemento</span> <span class="o">=</span> <span class="nx">construir_li</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
+<span class="lineno">4</span>     <span class="nx">$mi_selector</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">elemento</span><span class="p">);</span>
+<span class="lineno">5</span> <span class="p">});</span>
+</pre></div>
+</section>
+          
+        </div>
+        <footer>
+          
+          <aside class="source">
+            Source: <a href="file:///home/joac/machinalis/talks/real_javascript_development.markdown">real_javascript_development.markdown</a>
+          </aside>
+          
+          <aside class="page_number">
+            © <a href="http://www.machinalis.com">Machinalis</a> 22/26
+          </aside>
+        </footer>
+      </div>
+      
+      <!-- slide source: real_javascript_development.markdown -->
+      <div class="slide">
+        <div class="inner">
+          
+          
+          <section><p>Me olvido de muchas, acuerdense de estas por ahora!</p></section>
+          
+        </div>
+        <footer>
+          
+          <aside class="source">
+            Source: <a href="file:///home/joac/machinalis/talks/real_javascript_development.markdown">real_javascript_development.markdown</a>
+          </aside>
+          
+          <aside class="page_number">
+            © <a href="http://www.machinalis.com">Machinalis</a> 23/26
+          </aside>
+        </footer>
+      </div>
+      
+      <!-- slide source: real_javascript_development.markdown -->
+      <div class="slide">
+        <div class="inner">
+          
+          <header><h1>Mirar para adelante, no para atras</h1></header>
+          
+          
+          <section><p>Los polifixes son nuestros amigos!</p></section>
+          
+        </div>
+        <footer>
+          
+          <aside class="source">
+            Source: <a href="file:///home/joac/machinalis/talks/real_javascript_development.markdown">real_javascript_development.markdown</a>
+          </aside>
+          
+          <aside class="page_number">
+            © <a href="http://www.machinalis.com">Machinalis</a> 24/26
+          </aside>
+        </footer>
+      </div>
+      
+      <!-- slide source: real_javascript_development.markdown -->
+      <div class="slide">
+        <div class="inner">
+          
+          <header><h1>Como sobrevivir</h1></header>
+          
+          
+          <section><ul>
+<li>MDN (Mozilla Developer Network)</li>
+<li>Underscore.js</li>
+<li>JSDB.io</li>
+<li>Leer <strong>Javascript, Th Good Parts</strong> de Douglas Crockford </li>
+</ul></section>
+          
+        </div>
+        <footer>
+          
+          <aside class="source">
+            Source: <a href="file:///home/joac/machinalis/talks/real_javascript_development.markdown">real_javascript_development.markdown</a>
+          </aside>
+          
+          <aside class="page_number">
+            © <a href="http://www.machinalis.com">Machinalis</a> 25/26
+          </aside>
+        </footer>
+      </div>
+      
+      <!-- slide source: real_javascript_development.markdown -->
+      <div class="slide">
+        <div class="inner">
+          
+          <header><h1>Gracias !</h1></header>
+          
+          
+        </div>
+        <footer>
+          
+          <aside class="source">
+            Source: <a href="file:///home/joac/machinalis/talks/real_javascript_development.markdown">real_javascript_development.markdown</a>
+          </aside>
+          
+          <aside class="page_number">
+            © <a href="http://www.machinalis.com">Machinalis</a> 26/26
+          </aside>
+        </footer>
+      </div>
+      
+      <div class="slide last">
+        <div class="inner">
+        </div>
+        <footer>
+          <aside class="page_number">
+            © <a href="http://www.machinalis.com">Machinalis</a>
+          </aside>
+        </footer>
+      </div>
+    </div>
+  </div>
+  
+  <div id="toc" class="sidebar hidden">
+    <h2>Table of Contents</h2>
+    <table>
+      <caption>Table of Contents</caption>
+            
+      <tr id="toc-row-1">
+        <th><a href="#slide1">Una mojadita en javascript</a></th>
+        <td><a href="#slide1">1</a></td>
+      </tr>
+      
+            
+      <tr id="toc-row-2">
+        <th><a href="#slide2">Por que esta charla</a></th>
+        <td><a href="#slide2">2</a></td>
+      </tr>
+      
+            
+      <tr id="toc-row-3">
+        <th><a href="#slide3">Antes de poner la carne al fuego</a></th>
+        <td><a href="#slide3">3</a></td>
+      </tr>
+      
+            
+      <tr id="toc-row-4">
+        <th><a href="#slide4">Un poquito de historia</a></th>
+        <td><a href="#slide4">4</a></td>
+      </tr>
+      
+            
+      <tr id="toc-row-5">
+        <th><a href="#slide5">Features</a></th>
+        <td><a href="#slide5">5</a></td>
+      </tr>
+      
+            
+      <tr id="toc-row-6">
+        <th><a href="#slide6">Comparando con python</a></th>
+        <td><a href="#slide6">6</a></td>
+      </tr>
+      
+            
+      <tr id="toc-row-7">
+        <th><a href="#slide7">Donde hay javascript</a></th>
+        <td><a href="#slide7">7</a></td>
+      </tr>
+      
+            
+      <tr id="toc-row-8">
+        <th><a href="#slide8">Y porque es tan "poronga"?</a></th>
+        <td><a href="#slide8">8</a></td>
+      </tr>
+      
+            
+      <tr id="toc-row-9">
+        <th><a href="#slide9">Todo es global</a></th>
+        <td><a href="#slide9">9</a></td>
+      </tr>
+      
+            
+      <tr id="toc-row-10">
+        <th><a href="#slide10">Namespace compartido</a></th>
+        <td><a href="#slide10">10</a></td>
+      </tr>
+      
+            
+      <tr id="toc-row-11">
+        <th><a href="#slide11">Operador "+" concatena y suma</a></th>
+        <td><a href="#slide11">11</a></td>
+      </tr>
+      
+            
+      <tr id="toc-row-12">
+        <th><a href="#slide12">Los ';' se completan magicamente.</a></th>
+        <td><a href="#slide12">12</a></td>
+      </tr>
+      
+            
+      <tr id="toc-row-13">
+        <th><a href="#slide13">Un poco de objetos</a></th>
+        <td><a href="#slide13">13</a></td>
+      </tr>
+      
+            
+      <tr id="toc-row-14">
+        <th><a href="#slide14">Parece un JSON</a></th>
+        <td><a href="#slide14">14</a></td>
+      </tr>
+      
+            
+      <tr id="toc-row-15">
+        <th><a href="#slide15">Y las clases?</a></th>
+        <td><a href="#slide15">15</a></td>
+      </tr>
+      
+            
+      <tr id="toc-row-16">
+        <th><a href="#slide16">How is 'this'? Pt.1</a></th>
+        <td><a href="#slide16">16</a></td>
+      </tr>
+      
+            
+      <tr id="toc-row-17">
+        <th><a href="#slide17">How is 'this'? Pt.2</a></th>
+        <td><a href="#slide17">17</a></td>
+      </tr>
+      
+            
+      <tr id="toc-row-18">
+        <th><a href="#slide18">Dealing with 'this'</a></th>
+        <td><a href="#slide18">18</a></td>
+      </tr>
+      
+            
+      <tr id="toc-row-19">
+        <th><a href="#slide19">Prototype this!</a></th>
+        <td><a href="#slide19">19</a></td>
+      </tr>
+      
+            
+      <tr id="toc-row-20">
+        <th><a href="#slide20">Prototype override</a></th>
+        <td><a href="#slide20">20</a></td>
+      </tr>
+      
+            
+      <tr id="toc-row-21">
+        <th><a href="#slide21">Buenas practicas 1</a></th>
+        <td><a href="#slide21">21</a></td>
+      </tr>
+      
+            
+      <tr id="toc-row-22">
+        <th><a href="#slide22">Buenas practicas 2</a></th>
+        <td><a href="#slide22">22</a></td>
+      </tr>
+      
+            
+      <tr id="toc-row-23">
+        <th><a href="#slide23">-</a></th>
+        <td><a href="#slide23">23</a></td>
+      </tr>
+      
+            
+      <tr id="toc-row-24">
+        <th><a href="#slide24">Mirar para adelante, no para atras</a></th>
+        <td><a href="#slide24">24</a></td>
+      </tr>
+      
+            
+      <tr id="toc-row-25">
+        <th><a href="#slide25">Como sobrevivir</a></th>
+        <td><a href="#slide25">25</a></td>
+      </tr>
+      
+            
+      <tr id="toc-row-26">
+        <th><a href="#slide26">Gracias !</a></th>
+        <td><a href="#slide26">26</a></td>
+      </tr>
+      
+      
+    </table>
+  </div>
+  
+  <div id="help" class="sidebar hidden">
+    <h2>Help</h2>
+    <table>
+      <caption>Help</caption>
+      <tr>
+        <th>Table of Contents</th>
+        <td>t</td>
+      </tr>
+      <tr>
+        <th>Source Files</th>
+        <td>s</td>
+      </tr>
+      <tr>
+        <th>Slide Numbers</th>
+        <td>n</td>
+      </tr>
+      <tr>
+        <th>Notes</th>
+        <td>2</td>
+      </tr>
+      <tr>
+        <th>Help</th>
+        <td>h</td>
+      </tr>
+    </table>
+  </div>
+  <script>main()</script>
+</body>
+</html>
