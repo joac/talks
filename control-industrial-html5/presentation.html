@@ -1,0 +1,382 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Control Industrial</title>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans|PT+Sans+Narrow|PT+Mono' rel='stylesheet' type='text/css'>
+    <!-- Styles -->
+    
+    <link rel="stylesheet" media="print" href="file:///home/joac/machinalis/talks/control-industrial-html5/my_theme/css/print.css">
+    <link rel="stylesheet" media="screen, projection" href="file:///home/joac/machinalis/talks/control-industrial-html5/my_theme/css/screen.css">
+    
+    
+    <!-- /Styles -->
+</head>
+<body class="list">
+    
+      <!-- slide source: control-industrial-html5.markdown -->
+        <section class="slide">
+            <div>
+                
+                    <header><h1>Control Industrial</h1></header>
+                
+                
+                    <section class="slide-content"><h2>Joaquín "joac" Sorianello</h2>
+<h2>PyCon Argentina 2013</h2></section>
+                
+                <div class="presenter_notes">
+                    <section>
+                    
+                    </section>
+                </div>
+            </div>
+        </section>
+     
+      <!-- slide source: control-industrial-html5.markdown -->
+        <section class="slide">
+            <div>
+                
+                    <header><h1>Por que esta charla</h1></header>
+                
+                
+                    <section class="slide-content"><ul>
+<li>Me gustan los automatismos.</li>
+<li>Me gusta <code>Python</code></li>
+<li>No me gustan las soluciónes cerradas</li>
+</ul></section>
+                
+                <div class="presenter_notes">
+                    <section>
+                    
+                    </section>
+                </div>
+            </div>
+        </section>
+     
+      <!-- slide source: control-industrial-html5.markdown -->
+        <section class="slide">
+            <div>
+                
+                    <header><h1>Antes de arrancar la planta</h1></header>
+                
+                
+                    <section class="slide-content"><ul>
+<li>Si hablo muy rapido, presione el pulsador junto a su asiento.</li>
+<li>Si no funciona, grite "Que te pensa! ¿Que sos Schumaher?"</li>
+<li>Si hay typos, pull request a <a href="http://github.com/joac/talks">http://github.com/joac/talks</a></li>
+</ul></section>
+                
+                <div class="presenter_notes">
+                    <section>
+                    
+                    </section>
+                </div>
+            </div>
+        </section>
+     
+      <!-- slide source: control-industrial-html5.markdown -->
+        <section class="slide">
+            <div>
+                
+                    <header><h1>Previously on Pycon</h1></header>
+                
+                
+                    <section class="slide-content"><p>En PyConAr 2010, en córdoba conté sobre varias técnicas para comunicarse control
+dispositivos industriales, esta vez, vamos con una implementación en el Mundo Real™.</p></section>
+                
+                <div class="presenter_notes">
+                    <section>
+                    
+                    </section>
+                </div>
+            </div>
+        </section>
+     
+      <!-- slide source: control-industrial-html5.markdown -->
+        <section class="slide">
+            <div>
+                
+                    <header><h1>Arquitectura</h1></header>
+                
+                
+                    <section class="slide-content"><p><img alt="" src="file:///home/joac/machinalis/talks/control-industrial-html5/diagrama_arakur.png" /></p></section>
+                
+                <div class="presenter_notes">
+                    <section>
+                    
+                    </section>
+                </div>
+            </div>
+        </section>
+     
+      <!-- slide source: control-industrial-html5.markdown -->
+        <section class="slide">
+            <div>
+                
+                    <header><h1>Arquitectura</h1></header>
+                
+                
+                    <section class="slide-content"><h2>Instrumentación y Control</h2>
+<p><img alt="" src="file:///home/joac/machinalis/talks/control-industrial-html5/diagrama_arakur_instrumentacion.png" /></p></section>
+                
+                <div class="presenter_notes">
+                    <section>
+                    
+                    </section>
+                </div>
+            </div>
+        </section>
+     
+      <!-- slide source: control-industrial-html5.markdown -->
+        <section class="slide">
+            <div>
+                
+                    <header><h1>Arquitectura</h1></header>
+                
+                
+                    <section class="slide-content"><h2>SCADA</h2>
+<p><img alt="" src="file:///home/joac/machinalis/talks/control-industrial-html5/diagrama_arakur_supervision.png" /></p></section>
+                
+                <div class="presenter_notes">
+                    <section>
+                    
+                    </section>
+                </div>
+            </div>
+        </section>
+     
+      <!-- slide source: control-industrial-html5.markdown -->
+        <section class="slide">
+            <div>
+                
+                    <header><h1>Que es un SCADA?</h1></header>
+                
+                
+                    <section class="slide-content"><p><strong>SCADA</strong> es el acrónimo para <em>Supervisory Control And Data Acquisition</em>.
+(Adquisición de Datos, Supervisión y Control)</p>
+<ul>
+<li>Combinación de dispositivos de automatización con una computadora.</li>
+<li>Almacenamiento de Datos</li>
+<li>Analisis de los procesos</li>
+<li>Parametrizacion de dispositivos</li>
+</ul></section>
+                
+                <div class="presenter_notes">
+                    <section>
+                    
+                    </section>
+                </div>
+            </div>
+        </section>
+     
+      <!-- slide source: control-industrial-html5.markdown -->
+        <section class="slide">
+            <div>
+                
+                    <header><h1>Mi filosofía en este asunto</h1></header>
+                
+                
+                    <section class="slide-content"><ul>
+<li>Los PLC se encargan de la lógica de control del proceso y su seguridad</li>
+<li>Las aplicaciones <em>NO DECIDEN</em> sobre el proceso</li>
+<li>Ser concientes del riesgo para las personas que puede tener un malfuncionamiento de un software </li>
+</ul></section>
+                
+                <div class="presenter_notes">
+                    <section>
+                    
+                    </section>
+                </div>
+            </div>
+        </section>
+     
+      <!-- slide source: control-industrial-html5.markdown -->
+        <section class="slide">
+            <div>
+                
+                    <header><h1>Modbus</h1></header>
+                
+                
+                    <section class="slide-content"><ul>
+<li>Protocolo abierto y documentado</li>
+<li><a href="http://www.modbus.com">http://www.modbus.com</a></li>
+<li>Creado por Modicon (hoy Schneider Electric) en <strong>1979</strong></li>
+<li>Trabaja a nivel bit</li>
+<li>Modbus/TCP usa un transporte muy comun! Redes TCP/IP</li>
+</ul></section>
+                
+                <div class="presenter_notes">
+                    <section>
+                    
+                    </section>
+                </div>
+            </div>
+        </section>
+     
+      <!-- slide source: control-industrial-html5.markdown -->
+        <section class="slide">
+            <div>
+                
+                    <header><h1>PyModbus</h1></header>
+                
+                
+                    <section class="slide-content"><ul>
+<li>Implementacion del protocolo Modbus basada en Twisted™</li>
+<li>Simple de utilizar y extender: </li>
+</ul></section>
+                
+                <div class="presenter_notes">
+                    <section>
+                    
+                    </section>
+                </div>
+            </div>
+        </section>
+     
+      <!-- slide source: control-industrial-html5.markdown -->
+        <section class="slide">
+            <div>
+                
+                    <header><h1>Redis</h1></header>
+                
+                
+                    <section class="slide-content"><ul>
+<li>Es un storage Key/Value</li>
+<li>Tiene estructuras de datos <strong>amigables</strong> para los desarrolladores</li>
+<li>Tiene <strong>Pub/Sub</strong> (Publisher/Suscriber)</li>
+</ul></section>
+                
+                <div class="presenter_notes">
+                    <section>
+                    
+                    </section>
+                </div>
+            </div>
+        </section>
+     
+      <!-- slide source: control-industrial-html5.markdown -->
+        <section class="slide has_code">
+            <div>
+                
+                    <header><h1>Flask</h1></header>
+                
+                
+                    <section class="slide-content"><p>Microframework web inspirado en Sinatra, su <code>hola mundo</code> es así de simple:</p>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<span class="lineno">2</span> <span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<span class="lineno">3</span> 
+<span class="lineno">4</span> <span class="nd">@app.route</span><span class="p">(</span><span class="s">&quot;/&quot;</span><span class="p">)</span>
+<span class="lineno">5</span> <span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+<span class="lineno">6</span>     <span class="k">return</span> <span class="s">&quot;Hello World!&quot;</span>
+<span class="lineno">7</span> 
+<span class="lineno">8</span> <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="lineno">9</span>     <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</section>
+                
+                <div class="presenter_notes">
+                    <section>
+                    
+                    </section>
+                </div>
+            </div>
+        </section>
+     
+      <!-- slide source: control-industrial-html5.markdown -->
+        <section class="slide">
+            <div>
+                
+                    <header><h1>SSE</h1></header>
+                
+                
+                    <section class="slide-content"><h2>Server Sent Events</h2>
+<ul>
+<li>Es una técnica que permite enviar eventos y actualizaciones
+ desde el servidor a las aplicaciones cliente.</li>
+<li>Está implementado en los browsers modernos y hay <code>polyfixes</code> para los mas antiguos.</li>
+</ul></section>
+                
+                <div class="presenter_notes">
+                    <section>
+                    
+                    </section>
+                </div>
+            </div>
+        </section>
+     
+      <!-- slide source: control-industrial-html5.markdown -->
+        <section class="slide">
+            <div>
+                
+                    <header><h1>State</h1></header>
+                
+                
+                <div class="presenter_notes">
+                    <section>
+                    
+                    </section>
+                </div>
+            </div>
+        </section>
+     
+      <!-- slide source: control-industrial-html5.markdown -->
+        <section class="slide">
+            <div>
+                
+                    <header><h1>Comandos remotos (RPC)</h1></header>
+                
+                
+                <div class="presenter_notes">
+                    <section>
+                    
+                    </section>
+                </div>
+            </div>
+        </section>
+     
+      <!-- slide source: control-industrial-html5.markdown -->
+        <section class="slide">
+            <div>
+                
+                    <header><h1>Demonios!</h1></header>
+                
+                
+                <div class="presenter_notes">
+                    <section>
+                    
+                    </section>
+                </div>
+            </div>
+        </section>
+     
+      <!-- slide source: control-industrial-html5.markdown -->
+        <section class="slide">
+            <div>
+                
+                    <header><h1>Preguntas?</h1></header>
+                
+                
+                <div class="presenter_notes">
+                    <section>
+                    
+                    </section>
+                </div>
+            </div>
+        </section>
+     
+	<!--
+		To hide progress bar from entire presentation
+		just remove “progress” element.
+		-->
+	<div class="progress"><div></div></div>
+    <!-- Javascripts -->
+        
+        <script type="text/javascript" src="file:///home/joac/machinalis/talks/control-industrial-html5/my_theme/js/slides.js"></script>
+        
+        
+    <!-- /Javascripts -->
+
+	<!-- Copyright © 2010–2012 Vadim Makeev — pepelsbey.net -->
+</body>
+</html>
