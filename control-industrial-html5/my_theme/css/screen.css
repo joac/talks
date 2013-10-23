@@ -670,3 +670,11 @@ body {
   color: #666666; }
 
 /* Literal.Number.Integer.Long */
+
+.slide > .left_panel {
+    background: url(../../img/logo-transparence.png)  #e80846 no-repeat center center;
+    width: 70px;
+    height: 100%;
+    margin:0;
+    padding: 0;
+}
