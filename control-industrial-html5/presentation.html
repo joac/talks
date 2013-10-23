@@ -65,6 +65,7 @@
 <li>Si hablo muy rapido, presione el pulsador junto a su asiento.</li>
 <li>Si no funciona, grite "Que te pensa! ¿Que sos Schumaher?"</li>
 <li>Si hay typos, pull request a <a href="http://github.com/joac/talks">http://github.com/joac/talks</a></li>
+<li>Vamos a mirar <strong>Mucho Código</strong>, no se desmayen</li>
 </ul></section>
                 
                 <div class="presenter_notes">
@@ -84,59 +85,6 @@
                 
                     <section class="slide-content"><p>En PyConAr 2010, en córdoba conté sobre varias técnicas para comunicarse control
 dispositivos industriales, esta vez, vamos con una implementación en el Mundo Real™.</p></section>
-                
-                <div class="presenter_notes">
-                    <section>
-                    
-                    </section>
-                </div>
-            </div>
-        </section>
-     
-      <!-- slide source: control-industrial-html5.markdown -->
-        <section class="slide">
-            <div>
-                
-                    <header><h1>Arquitectura</h1></header>
-                
-                
-                    <section class="slide-content"><p><img alt="" src="file:///home/joac/machinalis/talks/control-industrial-html5/diagrama_arakur.png" /></p></section>
-                
-                <div class="presenter_notes">
-                    <section>
-                    
-                    </section>
-                </div>
-            </div>
-        </section>
-     
-      <!-- slide source: control-industrial-html5.markdown -->
-        <section class="slide">
-            <div>
-                
-                    <header><h1>Arquitectura</h1></header>
-                
-                
-                    <section class="slide-content"><h2>Instrumentación y Control</h2>
-<p><img alt="" src="file:///home/joac/machinalis/talks/control-industrial-html5/diagrama_arakur_instrumentacion.png" /></p></section>
-                
-                <div class="presenter_notes">
-                    <section>
-                    
-                    </section>
-                </div>
-            </div>
-        </section>
-     
-      <!-- slide source: control-industrial-html5.markdown -->
-        <section class="slide">
-            <div>
-                
-                    <header><h1>Arquitectura</h1></header>
-                
-                
-                    <section class="slide-content"><h2>SCADA</h2>
-<p><img alt="" src="file:///home/joac/machinalis/talks/control-industrial-html5/diagrama_arakur_supervision.png" /></p></section>
                 
                 <div class="presenter_notes">
                     <section>
@@ -174,6 +122,63 @@ dispositivos industriales, esta vez, vamos con una implementación en el Mundo R
         <section class="slide">
             <div>
                 
+                    <header><h1>La competencia</h1></header>
+                
+                
+                    <section class="slide-content"><p><img alt="" src="file:///home/joac/machinalis/talks/control-industrial-html5/img/scada_screenshot_boc_em_overview.gif" /></p></section>
+                
+                <div class="presenter_notes">
+                    <section>
+                    
+                    </section>
+                </div>
+            </div>
+        </section>
+     
+      <!-- slide source: control-industrial-html5.markdown -->
+        <section class="slide">
+            <div>
+                
+                    <header><h1>Mas competencia</h1></header>
+                
+                
+                    <section class="slide-content"><p><img alt="" src="file:///home/joac/machinalis/talks/control-industrial-html5/img/wwapp.jpg" /></p></section>
+                
+                <div class="presenter_notes">
+                    <section>
+                    
+                    </section>
+                </div>
+            </div>
+        </section>
+     
+      <!-- slide source: control-industrial-html5.markdown -->
+        <section class="slide">
+            <div>
+                
+                    <header><h1>El Problema</h1></header>
+                
+                
+                    <section class="slide-content"><ul>
+<li>Aplicaciones diseñadas por <strong>Electricistas</strong></li>
+<li>Tecnologías desactualizadas</li>
+<li>Temor y desconocimiento sobre tecnologias web</li>
+<li>Runtimes pobremente documentados y con diseño visual arcaico</li>
+<li>Componentes de baja calidad, y pocas opciones</li>
+</ul></section>
+                
+                <div class="presenter_notes">
+                    <section>
+                    
+                    </section>
+                </div>
+            </div>
+        </section>
+     
+      <!-- slide source: control-industrial-html5.markdown -->
+        <section class="slide">
+            <div>
+                
                     <header><h1>Mi filosofía en este asunto</h1></header>
                 
                 
@@ -195,16 +200,8 @@ dispositivos industriales, esta vez, vamos con una implementación en el Mundo R
         <section class="slide">
             <div>
                 
-                    <header><h1>Modbus</h1></header>
+                    <header><h1>Las Herramientas</h1></header>
                 
-                
-                    <section class="slide-content"><ul>
-<li>Protocolo abierto y documentado</li>
-<li><a href="http://www.modbus.com">http://www.modbus.com</a></li>
-<li>Creado por Modicon (hoy Schneider Electric) en <strong>1979</strong></li>
-<li>Trabaja a nivel bit</li>
-<li>Modbus/TCP usa un transporte muy comun! Redes TCP/IP</li>
-</ul></section>
                 
                 <div class="presenter_notes">
                     <section>
@@ -218,13 +215,40 @@ dispositivos industriales, esta vez, vamos con una implementación en el Mundo R
         <section class="slide">
             <div>
                 
+                    <header><h1>Modbus</h1></header>
+                
+                
+                    <section class="slide-content"><p>Es un protocolo abierto y documentado <a href="http://www.modbus.com">http://www.modbus.com</a>
+Creado por Modicon (hoy Schneider Electric) en <strong>1979</strong>
+ * Trabaja a nivel bit
+ * Modbus/TCP usa un transporte muy comun! Redes TCP/IP</p></section>
+                
+                <div class="presenter_notes">
+                    <section>
+                    
+                    </section>
+                </div>
+            </div>
+        </section>
+     
+      <!-- slide source: control-industrial-html5.markdown -->
+        <section class="slide has_code">
+            <div>
+                
                     <header><h1>PyModbus</h1></header>
                 
                 
-                    <section class="slide-content"><ul>
-<li>Implementacion del protocolo Modbus basada en Twisted™</li>
-<li>Simple de utilizar y extender: </li>
-</ul></section>
+                    <section class="slide-content"><p>https://github.com/bashwork/pymodbus</p>
+<p>Implementacion del protocolo Modbus basada en Twisted™ muy simple de utilizar:</p>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="kn">from</span> <span class="nn">pymodbus.client.sync</span> <span class="kn">import</span> <span class="n">ModbusTcpClient</span>
+<span class="lineno">2</span> 
+<span class="lineno">3</span> <span class="n">client</span> <span class="o">=</span> <span class="n">ModbusTcpClient</span><span class="p">(</span><span class="s">&#39;127.0.0.1&#39;</span><span class="p">)</span>
+<span class="lineno">4</span> <span class="n">client</span><span class="o">.</span><span class="n">write_coil</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+<span class="lineno">5</span> <span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">read_coils</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="lineno">6</span> <span class="k">print</span> <span class="n">result</span><span class="o">.</span><span class="n">bits</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="lineno">7</span> <span class="n">client</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</section>
                 
                 <div class="presenter_notes">
                     <section>
@@ -306,10 +330,67 @@ dispositivos industriales, esta vez, vamos con una implementación en el Mundo R
         </section>
      
       <!-- slide source: control-industrial-html5.markdown -->
+        <section class="slide has_code">
+            <div>
+                
+                    <header><h1>SSE</h1></header>
+                
+                
+                    <section class="slide-content"><h2>Server Side</h2>
+<h1>python (flask) side:</h1>
+<div class="highlight"><pre><span class="lineno"> 1</span> <span class="kn">import</span> <span class="nn">time</span>
+<span class="lineno"> 2</span> <span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Response</span>
+<span class="lineno"> 3</span> 
+<span class="lineno"> 4</span> <span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<span class="lineno"> 5</span> 
+<span class="lineno"> 6</span> <span class="nd">@app.route</span><span class="p">(</span><span class="s">&#39;/event_stream&#39;</span><span class="p">)</span>
+<span class="lineno"> 7</span> <span class="k">def</span> <span class="nf">stream</span><span class="p">():</span>
+<span class="lineno"> 8</span>     <span class="k">def</span> <span class="nf">event_stream</span><span class="p">():</span>
+<span class="lineno"> 9</span>         <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+<span class="lineno">10</span>         <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="lineno">11</span>         <span class="k">yield</span> <span class="s">&#39;data: </span><span class="si">%s</span><span class="se">\n\n</span><span class="s">&#39;</span> <span class="o">%</span> <span class="s">&#39;hola mundo&#39;</span>
+<span class="lineno">12</span> 
+<span class="lineno">13</span> <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">event_stream</span><span class="p">(),</span>
+<span class="lineno">14</span>                  <span class="n">mimetype</span><span class="o">=</span><span class="s">&quot;text/event-stream&quot;</span><span class="p">)</span>
+</pre></div>
+</section>
+                
+                <div class="presenter_notes">
+                    <section>
+                    
+                    </section>
+                </div>
+            </div>
+        </section>
+     
+      <!-- slide source: control-industrial-html5.markdown -->
+        <section class="slide has_code">
+            <div>
+                
+                    <header><h1>SSE</h1></header>
+                
+                
+                    <section class="slide-content"><h2>Client Side</h2>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="kd">var</span> <span class="nx">source</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventSource</span><span class="p">(</span><span class="s1">&#39;/event_stream&#39;</span><span class="p">);</span>
+<span class="lineno">2</span> <span class="nx">source</span><span class="p">.</span><span class="nx">onmessage</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
+<span class="lineno">3</span>   <span class="nx">alert</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+<span class="lineno">4</span> <span class="p">};</span>
+</pre></div>
+</section>
+                
+                <div class="presenter_notes">
+                    <section>
+                    
+                    </section>
+                </div>
+            </div>
+        </section>
+     
+      <!-- slide source: control-industrial-html5.markdown -->
         <section class="slide">
             <div>
                 
-                    <header><h1>State</h1></header>
+                    <header><h1>La solución</h1></header>
                 
                 
                 <div class="presenter_notes">
@@ -324,8 +405,10 @@ dispositivos industriales, esta vez, vamos con una implementación en el Mundo R
         <section class="slide">
             <div>
                 
-                    <header><h1>Comandos remotos (RPC)</h1></header>
+                    <header><h1>Arquitectura</h1></header>
                 
+                
+                    <section class="slide-content"><p><img alt="" src="file:///home/joac/machinalis/talks/control-industrial-html5/img/diagrama_arakur.png" /></p></section>
                 
                 <div class="presenter_notes">
                     <section>
@@ -339,8 +422,89 @@ dispositivos industriales, esta vez, vamos con una implementación en el Mundo R
         <section class="slide">
             <div>
                 
-                    <header><h1>Demonios!</h1></header>
+                    <header><h1>Arquitectura</h1></header>
                 
+                
+                    <section class="slide-content"><h2>Instrumentación y Control</h2>
+<p><img alt="" src="file:///home/joac/machinalis/talks/control-industrial-html5/img/diagrama_arakur_instrumentacion.png" /></p></section>
+                
+                <div class="presenter_notes">
+                    <section>
+                    
+                    </section>
+                </div>
+            </div>
+        </section>
+     
+      <!-- slide source: control-industrial-html5.markdown -->
+        <section class="slide">
+            <div>
+                
+                    <header><h1>Arquitectura</h1></header>
+                
+                
+                    <section class="slide-content"><h2>SCADA</h2>
+<p><img alt="" src="file:///home/joac/machinalis/talks/control-industrial-html5/img/diagrama_arakur_supervision.png" /></p></section>
+                
+                <div class="presenter_notes">
+                    <section>
+                    
+                    </section>
+                </div>
+            </div>
+        </section>
+     
+      <!-- slide source: control-industrial-html5.markdown -->
+        <section class="slide">
+            <div>
+                
+                    <header><h1>Arquitectura</h1></header>
+                
+                
+                    <section class="slide-content"><h2>Componentes</h2></section>
+                
+                <div class="presenter_notes">
+                    <section>
+                    
+                    </section>
+                </div>
+            </div>
+        </section>
+     
+      <!-- slide source: control-industrial-html5.markdown -->
+        <section class="slide">
+            <div>
+                
+                    <header><h1>Conclusiones</h1></header>
+                
+                
+                    <section class="slide-content"><p>Trabajar con <code>python</code> permitio:</p>
+<ul>
+<li>Alta velocidad de desarrollo</li>
+<li>Muchas opciones a la hora de elegir librerías</li>
+<li>Posibilidad de tener entornos de desarrollo, sin los dispositivos</li>
+<li>Mas felicidad en el desarrollador</li>
+<li>Si hubiese conocido Backbone o Angular, el desarrollo hubiese sido mas facil</li>
+</ul></section>
+                
+                <div class="presenter_notes">
+                    <section>
+                    
+                    </section>
+                </div>
+            </div>
+        </section>
+     
+      <!-- slide source: control-industrial-html5.markdown -->
+        <section class="slide">
+            <div>
+                
+                    <header><h1>El futuro</h1></header>
+                
+                
+                    <section class="slide-content"><p>En los laboratorios secretos de <strong>Machinalis</strong> estamos trabajando en un proyecto
+que hará mucho mas sencillo realizar este tipo de aplicaciones usando python</p>
+<p><img alt="" src="file:///home/joac/machinalis/talks/control-industrial-html5/img/logo-full.png" /></p></section>
                 
                 <div class="presenter_notes">
                     <section>
